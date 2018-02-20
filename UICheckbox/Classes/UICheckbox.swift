@@ -50,6 +50,7 @@ import UIKit
             layer.borderColor = borderColor.cgColor
         }
     }
+    
 
     /*
     * Variable stores UICheckbox border radius
@@ -132,9 +133,9 @@ public extension UICheckbox {
         let frameworkBundle = Bundle(for: UICheckbox.self)
         let bundleURL = frameworkBundle.resourceURL?.appendingPathComponent("UICheckbox.bundle")
         let resourceBundle = Bundle(url: bundleURL!)
-        let image = UIImage(named: "ic_check_3x", in: resourceBundle, compatibleWith: nil)
+        let image = UIImage(named: "ic_check_3x", in: resourceBundle, compatibleWith: nil)?.withRenderingMode(.alwaysTemplate)
         imageView?.contentMode = .scaleAspectFit
-
+        
         setImage(nil, for: UIControlState())
         setImage(image, for: .selected)
         setImage(image, for:  .highlighted)
